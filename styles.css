@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg:#0b111b; --panel:#111c2b; --panel2:#142238; --border:#26394f;
+  --blue:#398bdb; --blue2:#63b2ff; --text:#e9f0f8; --muted:#8ea1b8;
+}
+html, body, [class*="css"] {font-family:Inter,Segoe UI,sans-serif;}
+.stApp,[data-testid="stAppViewContainer"] {background:var(--bg);color:var(--text);}
+[data-testid="stHeader"] {background:rgba(11,17,27,.95);}
+[data-testid="stSidebar"] {background:#0e1928;border-right:1px solid var(--border);}
+[data-testid="stSidebar"] * {font-family:Inter,Segoe UI,sans-serif;}
+[data-testid="stSidebar"] .stRadio label {font-size:12px;color:#c1cede;}
+[data-testid="stSidebar"] .stRadio > div {gap:5px;}
+.brand-fallback {padding:8px 2px 18px;color:#fff;font-size:18px;font-weight:700;letter-spacing:3px;}
+.brand-fallback small {display:block;color:#8ca6c3;font-size:9px;letter-spacing:5px;margin-top:5px;}
+.eyebrow {font-size:9px;font-weight:700;letter-spacing:2px;color:var(--blue2);margin-bottom:7px;}
+.top-subtitle {font-size:9px;letter-spacing:2px;color:#8297b1;margin-top:5px;}
+.top-status {text-align:right;font-size:9px;letter-spacing:1px;color:#9ab0c8;padding-top:12px;}
+.status-dot {display:inline-block;width:7px;height:7px;border-radius:50%;background:#39c99a;box-shadow:0 0 8px #39c99a88;margin-right:7px;}
+.rule {height:1px;background:var(--border);margin:14px 0 22px;}
+h1,h2,h3 {color:#f0f5fc;}
+h2 {font-size:22px!important;font-weight:600!important;letter-spacing:-.4px;}
+p {color:#bdc9d8;font-size:12px;}
+.metric-card {min-height:105px;padding:14px;background:linear-gradient(145deg,#142238,#101a29);border:1px solid #273b54;border-radius:7px;}
+.metric-label {font-size:9px;letter-spacing:1px;color:#8fa4bc;font-weight:600;}
+.metric-value {font-size:19px;color:#f0f6ff;font-weight:600;margin-top:9px;}
+.metric-note {font-size:9px;color:#8193a9;margin-top:5px;}
+.panel-title {font-size:11px;font-weight:700;letter-spacing:1.1px;color:#dce8f5;margin:8px 0 4px;}
+.panel-note {font-size:9px;color:#8295ab;margin-bottom:4px;}
+.module-card {min-height:132px;padding:13px;background:linear-gradient(145deg,#142135,#101a29);border:1px solid #26384d;border-radius:7px;margin-bottom:10px;}
+.module-card:hover {border-color:#438ccb;box-shadow:0 0 13px #398bdb20;}
+.module-number {font-size:9px;color:#5ca8ec;margin-bottom:10px;}
+.module-name {font-size:11px;font-weight:600;color:#e5edf7;min-height:30px;}
+.module-description {font-size:9px;line-height:1.5;color:#8fa1b7;margin-top:7px;}
+.module-state {font-size:8px;color:#5ba7e8;letter-spacing:.8px;margin-top:10px;}
+[data-testid="stPlotlyChart"] {background:#111c2b;border:1px solid #25364a;border-radius:7px;padding:4px;}
+div[data-testid="stTextInput"] input,div[data-testid="stNumberInput"] input {background:#121f30;border:1px solid #2c425b;border-radius:6px;color:#f0f6ff;font-size:12px;}
+.stButton button,.stFormSubmitButton button,[data-testid="stDownloadButton"] button {background:linear-gradient(135deg,#286db0,#347fc7);color:white;border:1px solid #4a91d1;border-radius:5px;font-size:10px;font-weight:600;letter-spacing:.5px;min-height:36px;}
+.stButton button:hover,.stFormSubmitButton button:hover {background:#347fc7;border-color:#78b9f0;box-shadow:0 0 12px #4197e147;color:white;}
+[data-testid="stForm"] {border:0;padding:0;}
+.footer {border-top:1px solid var(--border);margin-top:38px;padding:16px 0;text-align:center;font-size:8px;line-height:2;letter-spacing:1px;color:#71849b;}
+div[data-testid="stAlert"] {font-size:12px;}
+
+/* ===== Header toolbar: hide GitHub icon (keep Fork + 3-dot menu) ===== */
+[data-testid="stGitHubIcon"],
+.stGitHubIcon,
+[data-testid="stToolbarActions"] a[href*="github.com"]:not([href*="fork"]),
+[data-testid="stToolbar"] a[href*="github.com"]:not([href*="fork"]),
+.stAppToolbar a[href*="github.com"]:not([href*="fork"]) {
+    display: none !important;
+}
+
+/* ===== Hide Streamlit watermark / viewer badge / manage-app button ===== */
+[class*="viewerBadge"],
+[data-testid="stViewerBadge"],
+.viewerBadge_container__r5tak,
+.styles_viewerBadge__CvC9N,
+#viewerBadge,
+[data-testid="manage-app-button"],
+[data-testid="stAppViewerBadge"],
+.stDeployButton,
+footer,
+#MainMenu + div:has(a[href*="streamlit.io"]) {
+    display: none !important;
+    visibility: hidden !important;
+}
